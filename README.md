@@ -180,83 +180,6 @@ README.md
 DEVELOPER_GUIDE.md
 ```
 
-## Développement
-
-### Ajouter un nouveau bloc
-
-1. **Créer la classe** dans le module approprié :
-```python
-from dataflowlab.core.block_base import BlockBase
-from dataflowlab.core.block_registry import BlockRegistry
-
-class MonNouveauBloc(BlockBase):
-    def process(self, data, **kwargs):
-        # Votre logique ici
-        return data_transformee
-    
-    def get_config_fields(self):
-        return [
-            {
-                "name": "param1",
-                "type": "number",
-                "label": "Mon paramètre",
-                "default": 0
-            }
-        ]
-
-# Enregistrement automatique
-BlockRegistry.register("MonNouveauBloc", MonNouveauBloc, "ma_categorie")
-```
-
-2. **Ajouter aux imports** dans `__init__.py` du module
-
-
-3. **Tester** avec `pytest tests/`
-
-### Tests
-
-```bash
-# Lancer tous les tests unitaires
-pytest tests/
-```
-
-## Dépendances
-
-### Obligatoires
-- `gradio>=4.0` : Interface utilisateur
-- `pandas>=2.0` : Manipulation données
-- `numpy>=1.24` : Calcul numérique
-- `scikit-learn>=1.3` : Machine learning
-- `plotly>=5.0` : Visualisations
-
-### Optionnelles
-- `statsmodels>=0.14` : Statistiques avancées
-- `xgboost>=2.0` : Gradient boosting
-- `lightgbm>=4.0` : Gradient boosting
-- `llama-cpp-python>=0.2.72` : LLM local
-- `shap>=0.44` : Explainability
-
-## Contribution
-
-1. Fork le projet
-2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
-3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Créer une Pull Request
-
-## Licence
-
-Ce projet est distribué sous licence GPLv3. Voir le fichier `LICENSE` pour plus de détails.
-
-## Support
-
-- 📚 Documentation complète : `DEVELOPER_GUIDE.md`
-- 🐛 Issues : GitHub Issues
-- 💬 Discussions : GitHub Discussions
-
----
-
-**DataFlowLab** - Démocratiser le Machine Learning par la simplicité visuelle.
 
 ## Paramètres de configuration des blocs (JSON)
 
@@ -686,3 +609,80 @@ Ce projet est distribué sous licence GPLv3. Voir le fichier `LICENSE` pour plus
 |----------------|----------|----------------------------------|--------------------------------------------------|
 | col            | text     | nom_colonne                      | Colonne texte à prétraiter                       |
 | text_column    | text     | nom_colonne                      | Colonne texte (optionnel)                        |
+
+
+## Développement
+
+### Ajouter un nouveau bloc
+
+1. **Créer la classe** dans le module approprié :
+```python
+from dataflowlab.core.block_base import BlockBase
+from dataflowlab.core.block_registry import BlockRegistry
+
+class MonNouveauBloc(BlockBase):
+    def process(self, data, **kwargs):
+        # Votre logique ici
+        return data_transformee
+    
+    def get_config_fields(self):
+        return [
+            {
+                "name": "param1",
+                "type": "number",
+                "label": "Mon paramètre",
+                "default": 0
+            }
+        ]
+
+# Enregistrement automatique
+BlockRegistry.register("MonNouveauBloc", MonNouveauBloc, "ma_categorie")
+```
+
+2. **Ajouter aux imports** dans `__init__.py` du module
+
+
+3. **Tester** avec `pytest tests/`
+
+### Tests
+
+```bash
+# Lancer tous les tests unitaires
+pytest tests/
+```
+
+## Dépendances
+
+### Obligatoires
+- `gradio>=4.0` : Interface utilisateur
+- `pandas>=2.0` : Manipulation données
+- `numpy>=1.24` : Calcul numérique
+- `scikit-learn>=1.3` : Machine learning
+- `plotly>=5.0` : Visualisations
+
+### Optionnelles
+- `statsmodels>=0.14` : Statistiques avancées
+- `xgboost>=2.0` : Gradient boosting
+- `lightgbm>=4.0` : Gradient boosting
+- `llama-cpp-python>=0.2.72` : LLM local
+- `shap>=0.44` : Explainability
+
+## Contribution
+
+1. Fork le projet
+2. Créer une branche feature (`git checkout -b feature/AmazingFeature`)
+3. Commit les changements (`git commit -m 'Add AmazingFeature'`)
+4. Push vers la branche (`git push origin feature/AmazingFeature`)
+5. Créer une Pull Request
+
+## Licence
+
+Ce projet est distribué sous licence GPLv3. Voir le fichier `LICENSE` pour plus de détails.
+
+## Support
+
+- 📚 Documentation complète : `DEVELOPER_GUIDE.md`
+- 🐛 Issues : GitHub Issues
+- 💬 Discussions : GitHub Discussions
+
+---

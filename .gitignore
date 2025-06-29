@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+.eggs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Data
+*.csv
+*.xlsx
+*.json
+*.sqlite
+*.db
+*.h5
+*.parquet
+*.feather
+*.pkl
+*.sav
+*.model
+
+# Export
+*.html
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.gif
